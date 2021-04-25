@@ -52,6 +52,19 @@ class ArrayList<E> extends AbstractList<E> implements RandomAccess {
 	return newarr;
     }
 }
+
+class GenericArray {
+	public static <T> T[] newInstance(Class<T> c, int size) {
+		return (T[])java.lang.reflect.Array.newInstance(c, size);  // unchecked
+	}
+	public static <T> Class<T> getComponentType(T[] a) {
+		return (Class<T>)a.getClass().getComponentType();  // unchecked
+	}
+	public static <T> T[] newInstance(T[] arr, int size) {
+		return newInstance(getComponentType(arr), size);
+	}
+}
+
 class ArrayListTest {
     public static void main(String... args) {
 	List<String> l = new ArrayList<String>(Arrays.asList("this","is","a","test"));
