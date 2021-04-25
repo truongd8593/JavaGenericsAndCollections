@@ -1,6 +1,6 @@
 Working with IntelliJ:
 
-Step 1: Move arrayList.java and GenericArray.java to a separated folder.
+Step 1: Move arrayList.java to a separated folder.
 
 Step 2: Right click on that folder, select 'Mark directory as' -> Source Root Folder.
 
